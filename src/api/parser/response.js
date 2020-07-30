@@ -1,3 +1,5 @@
+const xml2js = require('xml2js')
+
 const parsers = [
   {
     name: 'json',
@@ -10,11 +12,17 @@ const parsers = [
     exec (text) {
       return { result: text }
     }
+  },
+  {
+    name: 'xml',
+    exec (data) {
+      return xml2js.parseStringPromise(data, { trim: true })
+    }
   }
 ]
 
 module.exports = {
-  parse (response, format) {
+  async parse (response, format) {
     const parser = parsers.find(parser => parser.name === format)
     return parser ? parser.exec(response) : null
   }

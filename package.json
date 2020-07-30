@@ -12,7 +12,8 @@
   },
   "homepage": "https://github.com/doojin/usgs-earthquake-api#readme",
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "@types/jest": "^26.0.7",
