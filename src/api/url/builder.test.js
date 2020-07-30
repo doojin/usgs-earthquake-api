@@ -7,7 +7,7 @@ describe('API url builder', () => {
     describe('without parameters', () => {
       test('builds url without any parameters', () => {
         const url = urlBuilder.build('test-path');
-        expect(url).toEqual('https://earthquake.usgs.gov/fdsnws/event/test-path');
+        expect(url).toEqual('https://earthquake.usgs.gov/fdsnws/event/1/test-path');
       });
     });
 
@@ -21,7 +21,7 @@ describe('API url builder', () => {
 
       test('builds url with provided parameters', () => {
         const url = urlBuilder.build('test-path', parameters);
-        expect(url).toEqual('https://earthquake.usgs.gov/fdsnws/event/test-path?param1=value1&param2=2');
+        expect(url).toEqual('https://earthquake.usgs.gov/fdsnws/event/1/test-path?param1=value1&param2=2');
       });
     });
   });

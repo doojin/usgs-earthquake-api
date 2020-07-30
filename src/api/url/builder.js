@@ -1,4 +1,4 @@
-const BASE_URL = 'https://earthquake.usgs.gov/fdsnws/event/';
+const BASE_URL = 'https://earthquake.usgs.gov/fdsnws/event/1/';
 
 module.exports = {
   build(path, params = {}) {
