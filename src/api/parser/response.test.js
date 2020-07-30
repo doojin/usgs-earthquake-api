@@ -10,7 +10,7 @@ describe('API response parser', () => {
       response = '{ "testProperty": "testValue" }';
     });
 
-    it('parses JSON response into the object', () => {
+    test('parses JSON response into the object', () => {
       const result = responseParser.parse(response, format);
       expect(result).toEqual({ testProperty: 'testValue' });
     });
@@ -22,7 +22,7 @@ describe('API response parser', () => {
       response = 'plainText';
     });
 
-    it('returns plain text', () => {
+    test('returns plain text', () => {
       const result = responseParser.parse(response, format);
       expect(result).toEqual('plainText');
     });
@@ -34,7 +34,7 @@ describe('API response parser', () => {
       response = 'plainText';
     });
 
-    it('returns null', () => {
+    test('returns null', () => {
       const result = responseParser.parse(response, format);
       expect(result).toBeNull();
     });
