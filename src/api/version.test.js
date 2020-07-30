@@ -23,7 +23,7 @@ describe('version API', () => {
 
     test('returns API version as string', async () => {
       const version = await versionApi.getVersion()
-      expect(version).toEqual('12.34.56')
+      expect(version).toEqual({ result: '12.34.56' })
     })
   })
 })
