@@ -10,5 +10,15 @@
   "bugs": {
     "url": "https://github.com/doojin/usgs-earthquake-api/issues"
   },
-  "homepage": "https://github.com/doojin/usgs-earthquake-api#readme"
+  "homepage": "https://github.com/doojin/usgs-earthquake-api#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.7",
+    "jest": "^26.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
 }
