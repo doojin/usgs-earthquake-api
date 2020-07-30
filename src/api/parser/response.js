@@ -1,14 +1,14 @@
 const parsers = [
   {
     name: 'json',
-    exec (str) {
-      return JSON.parse(str)
+    exec (obj) {
+      return obj
     }
   },
   {
     name: 'text',
-    exec (str) {
-      return str
+    exec (text) {
+      return { result: text }
     }
   }
 ]

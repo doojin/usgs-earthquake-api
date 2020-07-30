@@ -7,7 +7,7 @@ describe('API response parser', () => {
   describe('response format is JSON', () => {
     beforeEach(() => {
       format = 'json'
-      response = '{ "testProperty": "testValue" }'
+      response = { testProperty: 'testValue' }
     })
 
     test('parses JSON response into the object', () => {
@@ -24,7 +24,7 @@ describe('API response parser', () => {
 
     test('returns plain text', () => {
       const result = responseParser.parse(response, format)
-      expect(result).toEqual('plainText')
+      expect(result).toEqual({ result: 'plainText' })
     })
   })
 
