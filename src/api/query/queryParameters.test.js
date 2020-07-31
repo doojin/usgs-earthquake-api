@@ -7,7 +7,9 @@ describe('query parameters', () => {
         unknown: 1
       })
 
-      expect(parameters).toEqual({})
+      expect(parameters).toEqual({
+        format: 'geojson'
+      })
     })
 
     test('filters out empty parameter values', () => {
@@ -15,7 +17,9 @@ describe('query parameters', () => {
         producttype: ''
       })
 
-      expect(parameters).toEqual({})
+      expect(parameters).toEqual({
+        format: 'geojson'
+      })
     })
 
     test('keeps known parameters', () => {
@@ -23,7 +27,10 @@ describe('query parameters', () => {
         producttype: 'testProductType'
       })
 
-      expect(parameters).toEqual({ producttype: 'testProductType' })
+      expect(parameters).toEqual({
+        producttype: 'testProductType',
+        format: 'geojson'
+      })
     })
   })
 })

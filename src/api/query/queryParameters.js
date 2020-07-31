@@ -42,12 +42,16 @@ const supportedParameters = [
 
 module.exports = class QueryParameters {
   constructor (query) {
-    return Object.entries(query)
+    const parameters = Object.entries(query)
       .filter(([key]) => supportedParameters.includes(key))
       .filter(([_, value]) => !!value)
       .reduce((prev, [key, value]) => {
         prev[key] = value
         return prev
       }, {})
+
+    parameters.format = 'geojson'
+
+    return parameters
   }
 }
