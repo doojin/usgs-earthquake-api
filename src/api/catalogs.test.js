@@ -22,6 +22,20 @@ describe('catalogs API', () => {
       })
     })
 
+    describe('error during http request', () => {
+      beforeEach(() => {
+        axios.get.mockRejectedValue({
+          response: {
+            data: 'status code:400\n\ntest error\n\nsome other info'
+          }
+        })
+      })
+
+      test('throws an error with descriptive message', async () => {
+        await expect(catalogsApi.getCatalogs()).rejects.toThrow('test error')
+      })
+    })
+
     test('executes correct HTTP request', async () => {
       await catalogsApi.getCatalogs()
       expect(axios.get).toHaveBeenCalledTimes(1)

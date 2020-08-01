@@ -22,6 +22,20 @@ describe('Contributors API', () => {
       })
     })
 
+    describe('error during http request', () => {
+      beforeEach(() => {
+        axios.get.mockRejectedValue({
+          response: {
+            data: 'status code:400\n\ntest error\n\nsome other info'
+          }
+        })
+      })
+
+      test('throws an error with descriptive message', async () => {
+        await expect(contributorsApi.getContributors()).rejects.toThrow('test error')
+      })
+    })
+
     test('executes correct HTTP request', async () => {
       await contributorsApi.getContributors()
       expect(axios.get).toHaveBeenCalledTimes(1)
