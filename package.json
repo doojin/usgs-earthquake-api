@@ -1,7 +1,12 @@
 {
   "name": "usgs-earthquake-api",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "NodeJS API for usgs.gov earthquake catalog",
+  "keywords": [
+    "usgs",
+    "earthquakes",
+    "API"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/doojin/usgs-earthquake-api.git"
