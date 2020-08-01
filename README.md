@@ -869,6 +869,7 @@ properties:
 | endtime              | String                        | present time   | Limit to events on or before the specified end time (ISO8601 format)                                                                                      |
 | starttime            | String                        | NOW - 30 days | Limit to events on or after the specified start time (ISO8601 format)                                                                                     |
 | updatedafter         | String                        | null           | Limit to events updated after the specified time (ISO8601 format)                                                                                         |
+||||
 | minlatitude          | Decimal [-90,90] degrees   | -90           | Limit to events with a latitude larger than the specified minimum                                                                                           |
 | minlongitude         | Decimal [-360,360] degrees | -180          | Limit to events with a longitude larger than the specified minimum                                                                                          |
 | maxlatitude          | [-90,90] degrees           | 90             | Limit to events with a latitude smaller than the specified maximum                                                                                          |
