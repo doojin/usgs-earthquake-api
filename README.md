@@ -909,3 +909,31 @@ properties:
 | producttype          | String                        | null           | Limit to events that have this type of product associated                                                                                                   |
 | productcode          | String                        | null           | Return the event that is associated with the productcode; The event will be returned even if the productcode is not the preferred code for the event        |
 | reviewstatus         | String                        | all            | Limit to events with a specific review status; The different review statuses are: `automatic`, `reviewed`                                                  |
+
+### Error handling
+
+Wrapper automagically processes all the API request failures and re-throws an error with a descriptive message.
+
+From documentation about the `limit` parameter:
+
+> Limit the results to the specified number of events. NOTE: The service limits queries to 20000, and any that exceed this limit will generate a HTTP response code "400 Bad Request".
+
+Example:
+
+```javascript
+try {
+  const earthquakes = await api.query.earthquakes({ limit: 50000 })
+} catch (e) {
+  console.log(e.message)
+}
+
+```
+
+
+<details>
+  <summary>Result</summary>
+
+  ```
+  Error: Bad limit value "50000". Valid values are 0 <= limit <= 20000
+  ```
+</details>
