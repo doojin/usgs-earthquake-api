@@ -1,3 +1,6 @@
+require('core-js/stable')
+require('regenerator-runtime/runtime')
+
 const VersionApi = require('./api/version')
 const ApplicationApi = require('./api/application')
 const ApplicationWadlApi = require('./api/applicationWadl')

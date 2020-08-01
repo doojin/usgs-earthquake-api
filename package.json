@@ -1,6 +1,6 @@
 {
   "name": "usgs-earthquake-api",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "NodeJS API for usgs.gov earthquake catalog",
   "repository": {
     "type": "git",
@@ -11,11 +11,19 @@
     "url": "https://github.com/doojin/usgs-earthquake-api/issues"
   },
   "homepage": "https://github.com/doojin/usgs-earthquake-api#readme",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "axios": "^0.19.2",
+    "core-js": "^3.6.5",
+    "regenerator-runtime": "^0.13.7",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
     "@types/jest": "^26.0.7",
     "eslint": "^7.5.0",
     "eslint-config-standard": "^14.1.1",
@@ -29,6 +37,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint ./src/**",
-    "checks": "npm run lint && npm run test"
+    "checks": "npm run lint && npm run test",
+    "build": "rm -rf ./lib && babel src --out-dir lib"
   }
 }
