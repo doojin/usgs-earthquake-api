@@ -1,6 +1,6 @@
 {
   "name": "usgs-earthquake-api",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "NodeJS API for usgs.gov earthquake catalog",
   "keywords": [
     "usgs",
@@ -43,7 +43,7 @@
     "jest": "^26.1.0"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest ./src/**",
     "lint": "eslint ./src/**",
     "checks": "npm run lint && npm run test",
     "build": "rm -rf ./lib && babel src --out-dir lib"
