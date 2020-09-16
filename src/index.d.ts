@@ -11,16 +11,24 @@ declare namespace u {
     query: QueryApi
   }
 
+  interface VersionApi {
+    getVersion(): Promise<VersionApiResponse>
+  }
+
+  type VersionApiResponse = {
+    result: string
+  }
+
+  interface ApplicationApi {
+    getInterfaceParameters(): Promise<ApplicationApiResponse>
+  }
+
   type ApplicationApiResponse = {
     "catalogs": Array<string>
     "contributors": Array<string>,
     "producttypes": Array<string>,
     "eventtypes": Array<string>,
     "magnitudetypes": Array<string>
-  }
-
-  interface ApplicationApi {
-    getInterfaceParameters(): Promise<ApplicationApiResponse>
   }
 
   interface ApplicationWadlApi {
@@ -41,10 +49,6 @@ declare namespace u {
 
   interface QueryApi {
     earthquakes(): Promise<any>
-  }
-
-  interface VersionApi {
-    getVersion(): Promise<any>
   }
 }
 
