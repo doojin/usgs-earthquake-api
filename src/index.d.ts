@@ -1,6 +1,6 @@
-declare const u: u.EarthquakeApi
-
+/* eslint-disable no-use-before-define */
 declare namespace u {
+  // eslint-disable-next-line no-unused-vars
   interface EarthquakeApi {
     version: VersionApi;
     application: ApplicationApi;
@@ -28,11 +28,11 @@ declare namespace u {
   }
 
   type ApplicationApiResponse = {
-    "catalogs": Array<string>;
-    "contributors": Array<string>;
-    "producttypes": Array<string>;
-    "eventtypes": Array<string>;
-    "magnitudetypes": Array<string>;
+    catalogs: Array<string>;
+    contributors: Array<string>;
+    producttypes: Array<string>;
+    eventtypes: Array<string>;
+    magnitudetypes: Array<string>;
   }
 
   // Application WADL API types
@@ -221,5 +221,8 @@ declare namespace u {
     reviewstatus?: 'automatic' | 'reviewed';
   }
 }
+
+// eslint-disable-next-line no-redeclare
+declare const u: u.EarthquakeApi
 
 export = u
