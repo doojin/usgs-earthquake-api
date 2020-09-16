@@ -107,13 +107,60 @@ declare namespace u {
   // Count API types
 
   interface CountApi {
-    getCount(): Promise<any>
+    getCount(query: Query): Promise<CountApiResponse>
+  }
+
+  type CountApiResponse = {
+    count: number;
+    maxAllowed: number;
   }
 
   // Query API types
 
   interface QueryApi {
-    earthquakes(): Promise<any>
+    earthquakes(query: Query): Promise<any>
+  }
+
+  type Query = {
+    endtime?: string;
+    starttime?: string;
+    updatedafter?: string;
+    minlatitude?: number;
+    minlongitude?: number;
+    maxlatitude?: number;
+    maxlongitude?: number;
+    latitude?: number;
+    longitude?: number;
+    maxradius?: number;
+    maxradiuskm?: number;
+    catalog?: string;
+    contributor?: string;
+    eventid?: string;
+    includeallmagnitudes?: boolean;
+    includeallorigins?: boolean;
+    includearrivals?: boolean;
+    includedeleted?: boolean | 'only';
+    includesuperseded?: boolean;
+    limit?: number;
+    maxdepth?: number;
+    maxmagnitude?: number;
+    mindepth?: number;
+    minmagnitude?: number;
+    offset?: number;
+    orderby?: 'time' | 'time-asc' | 'magnitude' | 'magnitude-asc';
+    alertlevel?: 'green' | 'yellow' | 'orange' | 'red';
+    eventtype?: string;
+    maxcdi?: number;
+    maxgap?: number;
+    maxmmi?: number;
+    maxsig?: number;
+    mincdi?: number;
+    minfelt?: number;
+    mingap?: number;
+    minsig?: number;
+    producttype?: string;
+    productcode?: string;
+    reviewstatus?: 'automatic' | 'reviewed';
   }
 }
 
