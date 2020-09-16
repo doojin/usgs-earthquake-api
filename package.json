@@ -1,6 +1,6 @@
 {
   "name": "usgs-earthquake-api",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "NodeJS API for usgs.gov earthquake catalog",
   "keywords": [
     "usgs",
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/doojin/usgs-earthquake-api#readme",
   "main": "./lib/index.js",
+  "types": "./src/index.d.ts",
   "files": [
+    "src/index.d.ts",
     "lib",
     "!lib/**/*.test.js",
     "README.md"
