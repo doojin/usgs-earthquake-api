@@ -261,7 +261,7 @@ const parameters = await api.application.getInterfaceParameters();
 #### WADL for interface /application.wadl
 
 ```javascript
-const wadlData = await this._httpGet('application.wadl', 'xml')
+const wadlData = await api.applicationWadl.getWadl()
 ```
 
 <details>

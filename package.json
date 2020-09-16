@@ -1,6 +1,6 @@
 {
   "name": "usgs-earthquake-api",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "NodeJS API for usgs.gov earthquake catalog",
   "keywords": [
     "usgs",
