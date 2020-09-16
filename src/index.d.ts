@@ -95,7 +95,7 @@ declare namespace u {
   // Catalog API types
 
   interface CatalogApi {
-    getCatalogs(): Promise<any>
+    getCatalogs(): Promise<Array<string>>
   }
 
   // Contributors API types
