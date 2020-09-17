@@ -108,6 +108,7 @@ declare namespace u {
 
   interface CountApi {
     getCount(query: Query): Promise<CountApiResponse>;
+    getCount(): Promise<CountApiResponse>;
   }
 
   type CountApiResponse = {
@@ -119,6 +120,7 @@ declare namespace u {
 
   interface QueryApi {
     earthquakes(query: Query): Promise<QueryApiResponse>;
+    earthquakes(): Promise<QueryApiResponse>;
   }
 
   type QueryApiResponse = {
