@@ -38,7 +38,7 @@ In your code:
 const api = require('usgs-earthquake-api');
 ```
 
-#### Interface parameters /application.json
+#### Interface parameters `/application.json`
 
 ```javascript
 const parameters = await api.application.getInterfaceParameters();
@@ -258,7 +258,7 @@ const parameters = await api.application.getInterfaceParameters();
   ```
 </details>
 
-#### WADL for interface /application.wadl
+#### WADL for interface `/application.wadl`
 
 ```javascript
 const wadlData = await api.applicationWadl.getWadl()
@@ -696,7 +696,7 @@ const wadlData = await api.applicationWadl.getWadl()
   ```
 </details>
 
-#### Available catalogs /catalogs
+#### Available catalogs `/catalogs`
 
 ```javascript
 const catalogs = await api.catalogs.getCatalogs()
@@ -753,7 +753,46 @@ const catalogs = await api.catalogs.getCatalogs()
   ```
 </details>
 
-#### Count on data request /count
+#### Available contributors `/contributors`
+
+```javascript
+const contributors = await api.contributors.getContributors()
+```
+
+<details>
+  <summary>Result</summary>
+
+  ```json
+  [
+    "admin",
+    "ak",
+    "at",
+    "atlas",
+    "av",
+    "cgs",
+    "ci",
+    "ew",
+    "hv",
+    "ismp",
+    "ld",
+    "mb",
+    "nc",
+    "nm",
+    "nn",
+    "np",
+    "official",
+    "ok",
+    "pr",
+    "pt",
+    "se",
+    "us",
+    "uu",
+    "uw"
+  ]
+  ```
+</details>
+
+#### Count on data request `/count`
 
 ```javascript
 const count = await api.count.getCount({ maxdepth: 5 });
@@ -772,7 +811,7 @@ const count = await api.count.getCount({ maxdepth: 5 });
   ```
 </details>
 
-#### Query /query
+#### Query `/query`
 
 ```javascript
 const earthquakes = await api.query.earthquakes({ limit: 1, maxdepth: 5 });
@@ -842,7 +881,7 @@ const earthquakes = await api.query.earthquakes({ limit: 1, maxdepth: 5 });
   ```
 </details>
 
-#### Service version /version
+#### Service version `/version`
 
 ```javascript
 const version = await api.version.getVersion();
