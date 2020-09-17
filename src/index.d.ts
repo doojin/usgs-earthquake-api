@@ -101,7 +101,7 @@ declare namespace u {
   // Contributors API types
 
   interface ContributorsApi {
-    getContributors(): Promise<any>;
+    getContributors(): Promise<Array<string>>;
   }
 
   // Count API types
