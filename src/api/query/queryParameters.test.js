@@ -2,6 +2,17 @@ const QueryParameters = require('./queryParameters')
 
 describe('query parameters', () => {
   describe('constructor', () => {
+    test('not filters out parameter with 0 value', () => {
+      const parameters = new QueryParameters({
+        limit: 0
+      })
+
+      expect(parameters).toEqual({
+        limit: 0,
+        format: 'geojson'
+      })
+    })
+
     test('filters out unknown parameters', () => {
       const parameters = new QueryParameters({
         unknown: 1

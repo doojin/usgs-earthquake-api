@@ -44,7 +44,7 @@ module.exports = class QueryParameters {
   constructor (query) {
     const parameters = Object.entries(query)
       .filter(([key]) => supportedParameters.includes(key))
-      .filter(([_, value]) => !!value)
+      .filter(([_, value]) => !!value || value === 0)
       .reduce((prev, [key, value]) => {
         prev[key] = value
         return prev
